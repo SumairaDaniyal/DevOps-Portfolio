@@ -12,16 +12,14 @@ jobs:
     permissions:
       pages: write
       id-token: write
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Upload Static Site Files
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload Site
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: ./   # jahan index.html hai
+          path: ./   # poora folder jahan index.html hai
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
